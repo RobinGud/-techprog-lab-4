@@ -17,9 +17,16 @@ public class FoodItem extends GenericItem {
     }
 
     @Override
-    void printAll() {
-        System.out.printf(
+    public String toString() {
+        return String.format(
                 "ID: %d, Name: %-20s, price: %5.2f, analog ID: %d, Category: %s, date of income: %s, expires: %d \n",
                 ID, name, price, AnalogID, category, DateOfIncome, expires);
+    }
+
+    @Override
+    protected Object clone() {
+        FoodItem item = new FoodItem(this.ID, this.name, this.price, this.AnalogID, this.category, this.DateOfIncome,
+                this.expires);
+        return item;
     }
 }

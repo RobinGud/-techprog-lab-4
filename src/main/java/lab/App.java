@@ -24,5 +24,12 @@ public class App {
         for (GenericItem item : items) {
             item.printAll();
         }
+
+        FoodItem foodObj1 = new FoodItem(6, "bread", 10f, 2, Category.FOOD, new Date(), (short) 11);
+        FoodItem foodObj2 = new FoodItem(7, "bread", 10f, 2, Category.FOOD, new Date(), (short) 11);
+        System.out.println(foodObj1.equals(foodObj2));
+
+        var foodObj3 = foodObj1.clone();
+        System.out.println(foodObj1.equals(foodObj3));
     }
 }
