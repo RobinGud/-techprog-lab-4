@@ -3,12 +3,17 @@
  */
 package lab;
 
+import lab.GenericItem;
+
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        GenericItem obj1 = new GenericItem(1, "string1", 1.2f, 3);
+        GenericItem obj2 = new GenericItem(2, "string2", 2.2f, 1);
+        GenericItem obj3 = new GenericItem(3, "string3", 3.2f, 2);
+
+        obj1.printAll();
+        obj2.printAll();
+        obj3.printAll();
     }
 }
