@@ -24,7 +24,7 @@ public class GenericItem {
     }
 
     void printAll() {
-        System.out.printf("ID: %d, Name: %-20s, price: %5.2f, AnalogID: %d, Category: %s \n", ID, name, price, AnalogID,
-                category);
+        System.out.printf("ID: %d, Name: %-20s, price: %5.2f, analog ID: %d, Category: %s \n", ID, name, price,
+                AnalogID, category);
     }
 }

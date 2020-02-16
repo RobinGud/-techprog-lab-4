@@ -5,6 +5,7 @@ package lab;
 
 import lab.GenericItem;
 import lab.GenericItem.Category;
+import java.util.Date;
 
 public class App {
 
@@ -16,5 +17,12 @@ public class App {
         obj1.printAll();
         obj2.printAll();
         obj3.printAll();
+
+        GenericItem[] items = { new FoodItem(4, "sup", 4.2f, 5, Category.FOOD, new Date(), (short) 23),
+                new TechicalItem(5, "key", 5.2f, 4, Category.GENERAL, (short) 32) };
+
+        for (GenericItem item : items) {
+            item.printAll();
+        }
     }
 }
