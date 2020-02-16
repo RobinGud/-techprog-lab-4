@@ -4,13 +4,14 @@
 package lab;
 
 import lab.GenericItem;
+import lab.GenericItem.Category;
 
 public class App {
 
     public static void main(String[] args) {
-        GenericItem obj1 = new GenericItem(1, "string1", 1.2f, 3);
-        GenericItem obj2 = new GenericItem(2, "string2", 2.2f, 1);
-        GenericItem obj3 = new GenericItem(3, "string3", 3.2f, 2);
+        GenericItem obj1 = new GenericItem(1, "bread", 1.2f, 3, Category.FOOD);
+        GenericItem obj2 = new GenericItem(2, "short", 2.2f, 1, Category.DRESS);
+        GenericItem obj3 = new GenericItem(3, "print", 3.2f, 2, Category.PRINT);
 
         obj1.printAll();
         obj2.printAll();
