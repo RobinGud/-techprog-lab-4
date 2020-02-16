@@ -10,26 +10,29 @@ import java.util.Date;
 public class App {
 
     public static void main(String[] args) {
-        GenericItem obj1 = new GenericItem(1, "bread", 1.2f, 3, Category.FOOD);
-        GenericItem obj2 = new GenericItem(2, "short", 2.2f, 1, Category.DRESS);
-        GenericItem obj3 = new GenericItem(3, "print", 3.2f, 2, Category.PRINT);
+        GenericItem obj1 = new GenericItem(1, "bread", 1.2f, null, Category.FOOD);
+        GenericItem obj2 = new GenericItem(2, "short", 2.2f, obj1, Category.DRESS);
+        GenericItem obj3 = new GenericItem(3, "print", 3.2f, obj2, Category.PRINT);
 
         obj1.printAll();
         obj2.printAll();
         obj3.printAll();
 
-        GenericItem[] items = { new FoodItem(4, "sup", 4.2f, 5, Category.FOOD, new Date(), (short) 23),
-                new TechicalItem(5, "key", 5.2f, 4, Category.GENERAL, (short) 32) };
+        GenericItem[] items = { new FoodItem(4, "sup", 4.2f, null, Category.FOOD, new Date(), (short) 23),
+                new TechicalItem(5, "key", 5.2f, null, Category.GENERAL, (short) 32) };
 
         for (GenericItem item : items) {
             item.printAll();
         }
 
-        FoodItem foodObj1 = new FoodItem(6, "bread", 10f, 2, Category.FOOD, new Date(), (short) 11);
-        FoodItem foodObj2 = new FoodItem(7, "bread", 10f, 2, Category.FOOD, new Date(), (short) 11);
+        FoodItem foodObj1 = new FoodItem(6, "bread", 10f, null, Category.FOOD, new Date(), (short) 11);
+        FoodItem foodObj2 = new FoodItem(7, "bread", 10f, null, Category.FOOD, new Date(), (short) 11);
         System.out.println(foodObj1.equals(foodObj2));
 
         var foodObj3 = foodObj1.clone();
         System.out.println(foodObj1.equals(foodObj3));
+
+        var obj4 = obj2.clone();
+        System.out.println(obj1.equals(obj4));
     }
 }

@@ -12,14 +12,14 @@ public class GenericItem {
     public int ID;
     public String name;
     public float price;
-    public int AnalogID;
+    public GenericItem analogObj;
     public Category category = Category.GENERAL;
 
-    GenericItem(int ID, String name, float price, int AnalogID, Category category) {
+    GenericItem(int ID, String name, float price, GenericItem analogObj, Category category) {
         this.ID = ID;
         this.name = name;
         this.price = price;
-        this.AnalogID = AnalogID;
+        this.analogObj = analogObj;
         this.category = category;
     }
 
@@ -29,8 +29,7 @@ public class GenericItem {
 
     @Override
     public String toString() {
-        return String.format("ID: %d, Name: %-20s, price: %5.2f, analog ID: %d, Category: %s \n", ID, name, price,
-                AnalogID, category);
+        return String.format("ID: %d, Name: %-20s, price: %5.2f, Category: %s \n", ID, name, price, category);
     }
 
     @Override
@@ -53,7 +52,8 @@ public class GenericItem {
 
     @Override
     protected Object clone() {
-        GenericItem item = new GenericItem(this.ID, this.name, this.price, this.AnalogID, this.category);
+        GenericItem item = new GenericItem(this.analogObj.ID, this.analogObj.name, this.analogObj.price,
+                this.analogObj.analogObj, this.analogObj.category);
         return item;
     }
 }
