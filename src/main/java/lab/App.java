@@ -33,5 +33,12 @@ public class App {
 
         var obj4 = obj2.clone();
         System.out.println(obj1.equals(obj4));
+
+        var line = "Конфеты `Маска`;45;120";
+        var item_fld = line.split(";");
+        System.out.println("Массив, полученный из строк: " + java.util.Arrays.toString(item_fld));
+        var foodItem = new FoodItem(item_fld[0], Float.parseFloat(item_fld[1]), null, Short.parseShort(item_fld[2]));
+
+        System.out.println(foodItem);
     }
 }
