@@ -3,7 +3,6 @@
  */
 package lab;
 
-import lab.GenericItem;
 import lab.GenericItem.Category;
 import java.util.Date;
 

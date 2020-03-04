@@ -14,8 +14,9 @@ public class GenericItem {
     public float price;
     public GenericItem analogObj;
     public Category category = Category.GENERAL;
+    static int currentID = 0;
 
-    GenericItem(int ID, String name, float price, GenericItem analogObj, Category category) {
+    public GenericItem(int ID, String name, float price, GenericItem analogObj, Category category) {
         this.ID = ID;
         this.name = name;
         this.price = price;
@@ -23,19 +24,20 @@ public class GenericItem {
         this.category = category;
     }
 
-    GenericItem(String name, float price, Category category) {
+    public GenericItem(String name, float price, Category category) {
+        this.ID = GenericItem.currentID++;
         this.name = name;
         this.price = price;
         this.category = category;
     }
 
-    GenericItem(String name, float price, GenericItem analogObj) {
-        this.name = name;
-        this.price = price;
+    public GenericItem(String name, float price, GenericItem analogObj) {
+        this(name, price, Category.GENERAL);
         this.analogObj = analogObj;
     }
 
-    GenericItem() {
+    public GenericItem() {
+        this("Untitled", 0f, Category.GENERAL);
     }
 
     public void printAll() {
