@@ -23,6 +23,21 @@ public class GenericItem {
         this.category = category;
     }
 
+    GenericItem(String name, float price, Category category) {
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
+
+    GenericItem(String name, float price, GenericItem analogObj) {
+        this.name = name;
+        this.price = price;
+        this.analogObj = analogObj;
+    }
+
+    GenericItem() {
+    }
+
     public void printAll() {
         System.out.println(toString());
     }
