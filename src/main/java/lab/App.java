@@ -63,5 +63,8 @@ public class App {
         System.out.println("In HashMap: " + (endHT - beginHT));
         System.out.println("In ArrayList: " + (endAL - beginAL));
 
+        CatalogLoader loader = new CatalogStubLoader();
+        loader.load(itemCatalog);
+
     }
 }
