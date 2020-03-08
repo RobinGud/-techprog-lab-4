@@ -1,6 +1,6 @@
-package lab;
+package ru.billing.client;
 
-import lab.GenericItem.Category;
+import ru.billing.stocklist.*;
 import java.util.Date;
 
 /**

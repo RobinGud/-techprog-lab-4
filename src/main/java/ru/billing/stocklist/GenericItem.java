@@ -1,13 +1,9 @@
-package lab;
+package ru.billing.stocklist;
 
 /**
  * GenericItem
  */
 public class GenericItem {
-
-    public enum Category {
-        FOOD, PRINT, DRESS, GENERAL
-    }
 
     private int ID;
     private String name;
@@ -109,7 +105,7 @@ public class GenericItem {
     }
 
     @Override
-    protected Object clone() {
+    public Object clone() {
         GenericItem item = new GenericItem(this.analogObj.ID, this.analogObj.name, this.analogObj.price,
                 this.analogObj.analogObj, this.analogObj.category);
         return item;

@@ -1,4 +1,4 @@
-package lab;
+package ru.billing.stocklist;
 
 import java.util.Date;
 
@@ -26,7 +26,7 @@ public class FoodItem extends GenericItem {
         this.expires = expires;
     }
 
-    FoodItem(int ID, String name, float price, GenericItem analogObj, Category category, Date DateOfIncome,
+    public FoodItem(int ID, String name, float price, GenericItem analogObj, Category category, Date DateOfIncome,
             short expires) {
         super(ID, name, price, analogObj, category);
         this.DateOfIncome = DateOfIncome;
@@ -54,7 +54,7 @@ public class FoodItem extends GenericItem {
     }
 
     @Override
-    protected Object clone() {
+    public Object clone() {
         FoodItem item = new FoodItem(this.getID(), this.getName(), this.getPrice(), this.getAnalogObj(),
                 this.getCategory(), this.DateOfIncome, this.expires);
         return item;

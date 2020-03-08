@@ -1,4 +1,6 @@
-package lab;
+package ru.billing.client;
+
+import ru.billing.stocklist.*;
 
 /**
  * Catalogloader

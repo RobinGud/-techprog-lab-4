@@ -33,7 +33,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = 'lab.App'
+    mainClassName = 'ru.billing.client.App'
 }
 
 test {

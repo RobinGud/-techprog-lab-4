@@ -1,4 +1,4 @@
-package lab;
+package ru.billing.stocklist;
 
 import java.util.ArrayList;
 import java.util.HashMap;
