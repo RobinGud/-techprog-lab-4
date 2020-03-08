@@ -5,7 +5,7 @@ package lab;
  */
 public class TechicalItem extends GenericItem {
 
-    short warrantyTime;
+    private short warrantyTime;
 
     TechicalItem(int ID, String name, float price, GenericItem analogObj, Category category, short warrantyTime) {
         super(ID, name, price, analogObj, category);
@@ -14,14 +14,14 @@ public class TechicalItem extends GenericItem {
 
     @Override
     public String toString() {
-        return String.format("ID: %d, Name: %-20s, price: %5.2f, Category: %s, warranty time: %d \n", ID, name, price,
-                category, warrantyTime);
+        return String.format("ID: %d, Name: %-20s, price: %5.2f, Category: %s, warranty time: %d \n", this.getID(),
+                this.getName(), this.getPrice(), this.getCategory(), warrantyTime);
     }
 
     @Override
     protected Object clone() {
-        TechicalItem item = new TechicalItem(this.ID, this.name, this.price, this.analogObj, this.category,
-                this.warrantyTime);
+        TechicalItem item = new TechicalItem(this.getID(), this.getName(), this.getPrice(), this.getAnalogObj(),
+                this.getCategory(), this.warrantyTime);
         return item;
     }
 }

@@ -7,8 +7,24 @@ import java.util.Date;
  */
 public class FoodItem extends GenericItem {
 
-    Date DateOfIncome;
-    short expires;
+    private Date DateOfIncome;
+    private short expires;
+
+    public Date getDateOfIncome() {
+        return this.DateOfIncome;
+    }
+
+    public void setDateOfIncome(Date DateOfIncome) {
+        this.DateOfIncome = DateOfIncome;
+    }
+
+    public short getExpires() {
+        return this.expires;
+    }
+
+    public void setExpires(short expires) {
+        this.expires = expires;
+    }
 
     FoodItem(int ID, String name, float price, GenericItem analogObj, Category category, Date DateOfIncome,
             short expires) {
@@ -33,14 +49,14 @@ public class FoodItem extends GenericItem {
 
     @Override
     public String toString() {
-        return String.format("ID: %d, Name: %-20s, price: %5.2f, Category: %s, date of income: %s, expires: %d \n", ID,
-                name, price, category, DateOfIncome, expires);
+        return String.format("ID: %d, Name: %-20s, price: %5.2f, Category: %s, date of income: %s, expires: %d \n",
+                getID(), this.getName(), this.getPrice(), this.getCategory(), DateOfIncome, expires);
     }
 
     @Override
     protected Object clone() {
-        FoodItem item = new FoodItem(this.ID, this.name, this.price, this.analogObj, this.category, this.DateOfIncome,
-                this.expires);
+        FoodItem item = new FoodItem(this.getID(), this.getName(), this.getPrice(), this.getAnalogObj(),
+                this.getCategory(), this.DateOfIncome, this.expires);
         return item;
     }
 }

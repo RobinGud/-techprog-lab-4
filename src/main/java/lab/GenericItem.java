@@ -9,11 +9,52 @@ public class GenericItem {
         FOOD, PRINT, DRESS, GENERAL
     }
 
-    public int ID;
-    public String name;
-    public float price;
-    public GenericItem analogObj;
-    public Category category = Category.GENERAL;
+    private int ID;
+    private String name;
+    private float price;
+    private GenericItem analogObj;
+    private Category category = Category.GENERAL;
+
+    public int getID() {
+        return this.ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public GenericItem getAnalogObj() {
+        return this.analogObj;
+    }
+
+    public void setAnalogObj(GenericItem analogObj) {
+        this.analogObj = analogObj;
+    }
+
+    public Category getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     static int currentID = 0;
 
     public GenericItem(int ID, String name, float price, GenericItem analogObj, Category category) {
