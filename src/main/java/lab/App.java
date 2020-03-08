@@ -40,5 +40,28 @@ public class App {
         var foodItem = new FoodItem(item_fld[0], Float.parseFloat(item_fld[1]), null, Short.parseShort(item_fld[2]));
 
         System.out.println(foodItem);
+
+        ItemCatalog itemCatalog = new ItemCatalog();
+        itemCatalog.addItem(obj1);
+        itemCatalog.addItem(obj2);
+        itemCatalog.addItem(obj3);
+        itemCatalog.addItem(foodObj1);
+        itemCatalog.addItem(foodObj2);
+
+        long beginHT = new Date().getTime();
+        for (int i = 0; i < 100000; i++) {
+            itemCatalog.findItemByID(1);
+        }
+        long endHT = new Date().getTime();
+
+        long beginAL = new Date().getTime();
+        for (int i = 0; i < 100000; i++) {
+            itemCatalog.findItemByID(1);
+        }
+        long endAL = new Date().getTime();
+
+        System.out.println("In HashMap: " + (endHT - beginHT));
+        System.out.println("In ArrayList: " + (endAL - beginAL));
+
     }
 }
