@@ -2,6 +2,8 @@ package ru.billing.stocklist;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * ItemCatalog
@@ -9,8 +11,8 @@ import java.util.HashMap;
 
 public class ItemCatalog {
 
-    private HashMap<Integer, GenericItem> catalog = new HashMap<Integer, GenericItem>();
-    private ArrayList<GenericItem> ALCatalog = new ArrayList<GenericItem>();
+    private Map<Integer, GenericItem> catalog = new HashMap<Integer, GenericItem>();
+    private List<GenericItem> ALCatalog = new ArrayList<GenericItem>();
 
     public void addItem(GenericItem item) {
         catalog.put(item.getID(), item);
